@@ -59,6 +59,7 @@ export default function RootLayout() {
         <Head>
           <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17461418440"></script>
           <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486244338"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486357143"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -68,6 +69,7 @@ export default function RootLayout() {
                 gtag('config', 'AW-17461418440');
                 gtag('config', 'AW-17461126438');
                 gtag('config', 'AW-17486244338');
+                gtag('config', 'AW-17486357143');
               `,
             }}
           />

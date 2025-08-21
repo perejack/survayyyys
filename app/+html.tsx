@@ -15,6 +15,7 @@ export default function Root({ children }: PropsWithChildren) {
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17461418440"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486244338"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486357143"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -24,6 +25,7 @@ export default function Root({ children }: PropsWithChildren) {
               gtag('config', 'AW-17461418440');
               gtag('config', 'AW-17461126438');
               gtag('config', 'AW-17486244338');
+              gtag('config', 'AW-17486357143');
             `,
           }}
         />
