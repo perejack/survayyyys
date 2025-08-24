@@ -1,13 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Stack } from 'expo-router';
-import Head from 'expo-router/head';
 import { StatusBar } from 'expo-status-bar';
-import { View, Platform } from 'react-native';
 import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import * as ExpoSplashScreen from 'expo-splash-screen';
-// Import correctly from authStore
-import { useAuthStore } from '@/stores/authStore';
 import CustomSplashScreen from '@/components/SplashScreen';
 import { AuthProvider } from '@/context/AuthProvider';
 
@@ -16,8 +12,6 @@ ExpoSplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   useFrameworkReady();
-  // Get authentication state from the store
-  const { isAuthenticated } = useAuthStore();
   const [isCustomSplashVisible, setIsCustomSplashVisible] = useState(true);
 
   const [fontsLoaded, fontError] = useFonts({
@@ -55,26 +49,6 @@ export default function RootLayout() {
 
   return (
     <>
-      {Platform.OS === 'web' && (
-        <Head>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17461418440"></script>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486244338"></script>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17486357143"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);} 
-                gtag('js', new Date());
-                gtag('config', 'AW-17461418440');
-                gtag('config', 'AW-17461126438');
-                gtag('config', 'AW-17486244338');
-                gtag('config', 'AW-17486357143');
-              `,
-            }}
-          />
-        </Head>
-      )}
 
       <AuthProvider>
         <Stack screenOptions={{ headerShown: false }}>
